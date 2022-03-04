@@ -11,3 +11,9 @@
 <p align="justify">Seu objetivo agora será criar um novo container fazendo o devido mapeamento de portas. Para isso, execute o comando <b>docker run -d -p 8080:80 dockersamples/static-site</b>. Repare que através da flag -p, estamos informando que a porta 8080 de nosso host irá refletir na porta 80 do container.</p>
 
 <p align="justify">Por fim, acesse em seu navegador localhost:8080 e veja a aplicação sendo carregada dentro de seu container.</p>
+
+<p align="justify">Com estas instruções acima, estamos informando ao Docker que queremos usar a imagem do node na versão 14 como base para nossa imagem. Definimos que nosso diretório padrão para executar os comandos dentro do container será o /app-node e em seguida copiamos todo o conteúdo do diretório atual Dockerfile para o diretório /app-node dentro do container.</p>
+
+<p align="justify">Por fim, em tempo de construção da imagem, executamos o comando npm install e definimos que, ao executar o container gerado por esta imagem, o comando executado será o npm start.</p>
+
+<p align="justify">Ainda dentro do diretório do Dockerfile, através do terminal, execute o comando docker build -t <seu-nome-de-usuario-do-docker-hub>/app-node:1.0 .. Dessa forma, sua primeira imagem será criada. Confira através do comando docker images se sua imagem está sendo listada.</p>
